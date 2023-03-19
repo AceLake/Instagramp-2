@@ -1,0 +1,61 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.nav-shadow {
+    height: 12px;
+    background-image: linear-gradient(180deg, rgba(0,0,0,.21), rgba(0,0,0,0));
+}
+.logo-words {
+    display: flex;
+    padding: 10px;
+    padding-left: 0px;
+    color: #3473FE;
+    text-decoration: none;
+    font-size:44px;
+    font-family:'Segoe UI';
+}
+.logo {
+    width: 85px;
+    padding-left: 22px;
+    padding-top: 17px;
+    padding-bottom: 17px;    
+}
+.pluss-shadow {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.card {
+    border-color: aliceblue;
+    border-width: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.nav {
+    padding-left: 50px;
+    color: #3473FE;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Segoe UI';
+}
+.nav-link {
+    color: #3473FE;
+}
