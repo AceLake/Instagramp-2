@@ -62,12 +62,13 @@ body {
     height: 100%;
     object-fit: cover;
 }
-.nav {
+nav {
     padding-left: 50px;
     color: #3473FE;
     text-decoration: none;
     font-size: 25px;
     font-family: 'Segoe UI';
+    z-index: 9999;
 }
 .nav-link {
     color: #3473FE;
