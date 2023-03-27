@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ClassLibrary.PostModel>
+<!-- Copied from index.cshtml, edit where needed-->
+@{
+    ViewData["Title"] = "Search";
+}
+@foreach (var item in @Model)
+{
+        <br>
+        <br>
+        <br>
+        <div class="card">
+            <div class="img-container">
+                <img src="@item.ImgURL" class="card-img-top" alt="...">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@item.Title</h5>
+                <p class="card-text">@item.Description</p>
+                <a href="#" class="btn btn-primary">Comments</a>
+            </div>
+        </div>  
+}
