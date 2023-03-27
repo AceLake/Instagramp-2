@@ -19,10 +19,10 @@ namespace Instagramp_2.Service
             await _posts.InsertOneAsync(post);
         }
 
-        public async Task<PostModel> GetById(string id)
+        public PostModel GetById(string id)
         {
             var filter = Builders<PostModel>.Filter.Eq(p => p.Id, id);
-            return await _posts.Find(filter).FirstOrDefaultAsync();
+            return  _posts.Find(filter).FirstOrDefault();
         }
 
         public List<PostModel> GetAll()
@@ -30,16 +30,16 @@ namespace Instagramp_2.Service
             return _posts.Find(_ => true).ToList();
         }
 
-        public async Task Update(string id, PostModel post)
+        public void Update(string id, PostModel post)
         {
             var filter = Builders<PostModel>.Filter.Eq(p => p.Id, id);
-            await _posts.ReplaceOneAsync(filter, post);
+            _posts.ReplaceOne(filter, post);
         }
 
-        public async Task Delete(string id)
+        public void Delete(string id)
         {
             var filter = Builders<PostModel>.Filter.Eq(p => p.Id, id);
-            await _posts.DeleteOneAsync(filter);
+            _posts.DeleteOne(filter);
         }
     }
 }
