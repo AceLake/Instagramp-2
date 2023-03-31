@@ -24,5 +24,19 @@ namespace RegisterAndLoginApp.Controllers
                 return View("LoginFailure", user);
             }
         }
+
+        public IActionResult ProcessRegister(UserModel user)
+        {
+            return View();
+        }
+
+        public IActionResult RegisterResults(UserModel user)
+        {
+            //validation is handled on the html, so there is no use for a check here
+            //when saving to database is added there will need to be a check here to check if the 
+            //databse has gotten the registration
+            return View("RegisterSuccess", user);
+            
+        }
     }
 }
