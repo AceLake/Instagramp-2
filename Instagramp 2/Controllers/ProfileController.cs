@@ -9,8 +9,8 @@ namespace Instagramp_2.Controllers
         PostDAO repo = new PostDAO();
         public IActionResult Index()
         {
-
-            return View();
+            
+            return View(repo.GetAll());
         }
         public IActionResult AddPost()
         {
