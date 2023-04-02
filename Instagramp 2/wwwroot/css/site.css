@@ -43,7 +43,7 @@ body {
     z-index: 1;
 }
 .card {
-    border-color: royalblue;
+    border-color: #4287f5;
     border-width: 5px;
     display: block;
     margin-left: auto;
