@@ -31,8 +31,8 @@ namespace RegisterAndLoginApp.Service
 
         public bool GetByNameAndPassword(UserModel user)
         {
-            var filter = Builders<UserModel>.Filter.Eq("username", user.Username) &
-                         Builders<UserModel>.Filter.Eq("password", user.Password);
+            var filter = Builders<UserModel>.Filter.Eq(u => u.Username, user.Username) &
+                         Builders<UserModel>.Filter.Eq(u => u.Password, user.Password);
             return _users.Find(filter).Any();
         }
 
