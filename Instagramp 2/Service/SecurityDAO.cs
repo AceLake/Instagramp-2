@@ -29,11 +29,11 @@ namespace RegisterAndLoginApp.Service
             return _users.Find(filter).FirstOrDefault();
         }
 
-        public UserModel GetByNameAndPassword(string username, string password)
+        public bool GetByNameAndPassword(UserModel user)
         {
-            var filter = Builders<UserModel>.Filter.Eq("username", username) &
-                         Builders<UserModel>.Filter.Eq("password", password);
-            return _users.Find(filter).FirstOrDefault();
+            var filter = Builders<UserModel>.Filter.Eq("username", user.Username) &
+                         Builders<UserModel>.Filter.Eq("password", user.Password);
+            return _users.Find(filter).Any();
         }
 
         public List<UserModel> GetAll()
