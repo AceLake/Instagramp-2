@@ -16,13 +16,4 @@
     <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Search\SearchTopics\Family\" />
-    <Folder Include="Views\Search\SearchTopics\Friends\" />
-    <Folder Include="Views\Search\SearchTopics\Nature\" />
-    <Folder Include="Views\Search\SearchTopics\Food\" />
-    <Folder Include="Views\Search\SearchTopics\Other\" />
-    <Folder Include="Views\Search\SearchTopics\Sports\" />
-  </ItemGroup>
-
 </Project>
