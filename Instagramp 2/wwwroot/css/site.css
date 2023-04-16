@@ -1,16 +1,16 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
@@ -22,26 +22,30 @@ body {
     height: 12px;
     background-image: linear-gradient(180deg, rgba(0,0,0,.21), rgba(0,0,0,0));
 }
+
 .logo-words {
     display: flex;
     padding: 10px;
     padding-left: 0px;
     color: #3473FE;
     text-decoration: none;
-    font-size:44px;
-    font-family:'Segoe UI';
+    font-size: 44px;
+    font-family: 'Segoe UI';
 }
+
 .logo {
     width: 85px;
     padding-left: 22px;
     padding-top: 17px;
-    padding-bottom: 17px;    
+    padding-bottom: 17px;
 }
+
 .pluss-shadow {
     position: fixed;
     width: 100%;
     z-index: 1;
 }
+
 .card {
     border-color: royalblue;
     border-width: 5px;
@@ -52,16 +56,19 @@ body {
     height: 650px;
     overflow: hidden;
 }
+
 .img-container {
     width: 100%;
     height: 70%;
     overflow: hidden;
 }
+
 .card-img-top {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 nav {
     padding-left: 50px;
     color: #3473FE;
@@ -70,6 +77,7 @@ nav {
     font-family: 'Segoe UI';
     z-index: 9999;
 }
+
 .nav-link {
     color: #3473FE;
 }
@@ -96,19 +104,17 @@ nav {
     text-align: center;
     width: 33.33%;
     padding: 5px;
-
 }
 
-    .searchcard:hover {
-        -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2);
-        transition: 2s ease;
-        outline-color: rgba(255, 255, 255, 0);
-        outline-offset: 15px;
-        text-shadow: 1px 1px 2px #427388;
-
-    }
+.searchcard:hover {
+     -webkit-transform: scale(1.2);
+     -ms-transform: scale(1.2);
+     transform: scale(1.2);
+     transition: 2s ease;
+     outline-color: rgba(255, 255, 255, 0);
+     outline-offset: 15px;
+     text-shadow: 1px 1px 2px #427388;
+}
 
 .searchrow {
     display: flex;
@@ -116,11 +122,11 @@ nav {
     padding: 0 4px;
 }
 
-.searchrow::after {
-    content: "";
-    clear: both;
-    display: table;
-}
+    .searchrow::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
 
 .searchcard-title {
     text-align: center;
