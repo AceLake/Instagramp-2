@@ -24,6 +24,10 @@
     <Folder Include="Views\Search\SearchTopics\Food\" />
     <Folder Include="Views\Search\SearchTopics\Other\" />
     <Folder Include="Views\Search\SearchTopics\Sports\" />
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\uploads\" />
+  </ItemGroup>
 </Project>
