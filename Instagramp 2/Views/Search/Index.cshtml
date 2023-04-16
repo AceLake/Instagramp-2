@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Instagramp_2.Models.SearchTermModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Search Terms</h1>
+
+<!-- Iterate through each item in the list of search options and create a card for them -->
+@foreach (var item in @Model)
+{
+    <br>
+    <br>
+    <br>
+    <div class="searchcard" a href="#">
+        <div class="searchimg-container">
+            <img src="@item.imgURL" class="card-img-top" alt="Image Name">
+        </div>
+        <div class="searchcard-body">
+            <h2 class="searchcard-title">@item.name</h2>
+            <p class="searchcard-text">@item.description</p>
+        </div>
+    </div>
+}

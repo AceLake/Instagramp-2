@@ -17,6 +17,7 @@
     <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj" />
   </ItemGroup>
 
+
   <ItemGroup>
     <Folder Include="Views\Search\SearchTopics\Family\" />
     <Folder Include="Views\Search\SearchTopics\Friends\" />
@@ -30,4 +31,5 @@
   <ItemGroup>
     <Content Remove="wwwroot\uploads\" />
   </ItemGroup>
+=======
 </Project>

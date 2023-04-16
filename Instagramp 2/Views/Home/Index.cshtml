@@ -5,9 +5,6 @@
 }
 @foreach (var item in @Model)
 {
-    <br>
-    <br>
-    <br>
     <div class="card">
         <div class="img-container">
             <img src="@item.ImgURL" class="card-img-top" alt="...">
@@ -18,5 +15,8 @@
             <a href="/Home/ShowPostEditForm/@item.Id" class="btn btn-warning">Edit</a>
             <a href="/Home/ShowPostDeleteForm/@item.Id" class="btn btn-danger">Delete</a>
         </div>
-    </div>  
+    </div>
+    <br />
+    <br />
+    <br />
 }

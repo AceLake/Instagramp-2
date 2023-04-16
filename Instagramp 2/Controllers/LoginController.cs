@@ -32,10 +32,22 @@ namespace RegisterAndLoginApp.Controllers
 
         public IActionResult RegisterResults(UserModel user)
         {
-            //validation is handled on the html, so there is no use for a check here
-            //when saving to database is added there will need to be a check here to check if the 
-            //databse has gotten the registration
-            return View("RegisterSuccess", user);
+
+            SecurityService securityService = new SecurityService();
+            SecurityDAO securityDAO = new SecurityDAO();
+
+            // Here I check if the user is already in the database 
+            // if they are it doesnt register the user
+            // if they are not then it creates the user
+            if (securityService.IsValid(user))
+            {
+                return View("LoginFailure", user);
+            }
+            else
+            {
+                securityDAO.Create(user);
+                return View("RegisterSuccess", user);
+            }
             
         }
     }
