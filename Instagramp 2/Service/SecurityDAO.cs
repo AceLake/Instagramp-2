@@ -22,6 +22,8 @@ namespace RegisterAndLoginApp.Service
             await _users.InsertOneAsync(user);
         }
 
+        
+
         public UserModel GetById(string id)
         {
             var filter = Builders<UserModel>.Filter.Eq(u => u.Id, id);
@@ -51,5 +53,7 @@ namespace RegisterAndLoginApp.Service
             var filter = Builders<UserModel>.Filter.Eq(u => u.Id, id);
             _users.DeleteOne(filter);
         }
+
+        
     }
 }
