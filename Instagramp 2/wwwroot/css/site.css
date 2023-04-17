@@ -135,3 +135,11 @@ nav {
     margin-left: 20px;
     margin-right: 0px;
 }
+
+.searchTerm {
+    color: #3473FE;
+    text-decoration: none;
+    font-size: 44px;
+    font-family: 'Segoe UI';
+    text-align: center;
+}

@@ -4,21 +4,23 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Search Terms</h1>
+<div class="searchTerm">
+    <h1>Search Terms</h1>
+</div>
 
-<!-- Iterate through each item in the list of search options and create a card for them -->
-@foreach (var item in @Model)
+@foreach (var item in Model.Select((value, i) => new { i, value }))
 {
     <br>
     <br>
     <br>
-    <div class="searchcard" a href="#">
+    <div class="searchcard">
         <div class="searchimg-container">
-            <img src="@item.imgURL" class="card-img-top" alt="Image Name">
+            <img src="@item.value.imgURL" class="card-img-top" alt="Image Name">
         </div>
         <div class="searchcard-body">
-            <h2 class="searchcard-title">@item.name</h2>
-            <p class="searchcard-text">@item.description</p>
+            <h2 class="searchcard-title">@item.value.name</h2>
+            <p class="searchcard-text">@item.value.description</p>
+            <a href="@Url.Action(item.value.actionName, item.value.controllerName)" class="btn btn-primary">Search</a>
         </div>
     </div>
 }
