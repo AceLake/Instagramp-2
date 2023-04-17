@@ -17,7 +17,7 @@ namespace RegisterAndLoginApp.Controllers
 
             if (securityService.IsValid(user))
             {
-                return View("LoginSuccess", user);
+                return RedirectToAction("Index","Home");
             }
             else
             {
