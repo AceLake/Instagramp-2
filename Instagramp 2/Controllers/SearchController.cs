@@ -1,4 +1,6 @@
-﻿using Instagramp_2.Models;
+﻿using ClassLibrary;
+using Instagramp_2.Models;
+using Instagramp_2.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Instagramp_2.Controllers
@@ -21,31 +23,49 @@ namespace Instagramp_2.Controllers
 
         public IActionResult Family()
         {
-            return View("Family");
+            var postDAO = new PostDAO();
+
+            var posts = postDAO.GetAll().Where(p => p.Category.Contains("family")).ToList();
+            return View(posts);
         }
         public IActionResult Friends()
         {
-            return View("Friends");
+            var postDAO = new PostDAO();
+
+            var posts = postDAO.GetAll().Where(p => p.Category.Contains("friends")).ToList();
+            return View(posts);
         }
 
         public IActionResult Nature()
         {
-            return View("Nature");
+            var postDAO = new PostDAO();
+
+            var posts = postDAO.GetAll().Where(p => p.Category.Contains("nature")).ToList();
+            return View(posts);
         }
 
         public IActionResult Sports()
         {
-            return View("Sports");
+            var postDAO = new PostDAO();
+
+            var posts = postDAO.GetAll().Where(p => p.Category.Contains("sports")).ToList();
+            return View(posts);
         }
 
         public IActionResult Food()
         {
-            return View("Food");
+            var postDAO = new PostDAO();
+
+            var posts = postDAO.GetAll().Where(p => p.Category.Contains("food")).ToList();
+            return View(posts);
         }
 
         public IActionResult Other()
         {
-            return View("Other");
+            var postDAO = new PostDAO();
+
+            var posts = postDAO.GetAll().Where(p => p.Category.Contains("other")).ToList();
+            return View(posts);
         }
     }
 }
