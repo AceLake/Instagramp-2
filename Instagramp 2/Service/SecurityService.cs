@@ -9,5 +9,7 @@ namespace RegisterAndLoginApp.Service
         {
             return securityDAO.GetByNameAndPassword(user);
         }
+
+        
     }
 }

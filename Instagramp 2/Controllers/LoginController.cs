@@ -16,8 +16,8 @@ namespace RegisterAndLoginApp.Controllers
             SecurityService securityService = new SecurityService();
 
             if (securityService.IsValid(user))
-            {
-                return View("LoginSuccess", user);
+            {//add a popup that says logged in
+                return RedirectToAction("Index","Home");
             }
             else
             {
