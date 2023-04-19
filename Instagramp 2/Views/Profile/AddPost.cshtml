@@ -30,6 +30,15 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label>Categories:</label><br>
+                <input type="checkbox" name="categories[]" value="family"> Family<br>
+                <input type="checkbox" name="categories[]" value="friends"> Friends<br>
+                <input type="checkbox" name="categories[]" value="nature"> Nature<br>
+                <input type="checkbox" name="categories[]" value="food"> Food<br>
+                <input type="checkbox" name="categories[]" value="sports"> Sports<br>
+                <input type="checkbox" name="categories[]" value="other"> Other<br>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

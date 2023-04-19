@@ -5,11 +5,8 @@
         public string name { get; set; }
         public string description { get; set; }
         public string imgURL { get; set; }
-
         public string actionName { get; set; }
-
         public string controllerName { get; set; }
-
 
         public SearchTermModel(string name, string description, string imgURL, string actionName, string controllerName)
         {
