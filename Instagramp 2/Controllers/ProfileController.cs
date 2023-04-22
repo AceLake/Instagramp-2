@@ -1,6 +1,8 @@
-﻿using ClassLibrary;
+﻿using System.Text;
+using ClassLibrary;
 using Instagramp_2.Service;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 
 namespace Instagramp_2.Controllers
 {
@@ -19,7 +21,15 @@ namespace Instagramp_2.Controllers
 
         public IActionResult PostSuccess(PostModel post)
         {
+            // convert image to bits:
+            //string imgRef = post.ImgURL;
+            //byte[] imageBytes = System.IO.File.ReadAllBytes(post.ImgURL);
+            //post.ImgURL = imageBytes.ToString();
+            //Console.WriteLine(imageBytes.ToString());
             repo.Create(post);
+
+            // delete local file
+            //System.IO.File.Delete(imgRef);
             return View("Index", repo.GetAll());
         }
 
@@ -39,10 +49,16 @@ namespace Instagramp_2.Controllers
             {
                 await file.CopyToAsync(stream);
             }
-
             ViewBag.Message = "File uploaded successfully.";
-            ViewBag.FilePath = $"/uploads/{fileName}";
 
+
+
+            byte[] imageBytes = System.IO.File.ReadAllBytes(filePath);
+            string stringBytes = Convert.ToBase64String(imageBytes);
+            ViewBag.FilePath = stringBytes;
+            //Console.WriteLine(stringBytes);
+            //ViewBag.FilePath = $"/uploads/{fileName}";
+            System.IO.File.Delete(filePath);
             return View("AddPost");
         }
 
