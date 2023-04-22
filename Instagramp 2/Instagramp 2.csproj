@@ -27,8 +27,9 @@
 	<ItemGroup>
 		<Content Remove="wwwroot\uploads\" />
 	</ItemGroup>
+
 	<ItemGroup>
-		<Folder Include="wwwroot\uploads\" />
+	  <Folder Include="wwwroot\uploads\" />
 	</ItemGroup>
 
 </Project>
