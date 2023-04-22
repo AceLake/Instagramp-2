@@ -52,7 +52,7 @@ namespace Instagramp_2.Controllers
             ViewBag.Message = "File uploaded successfully.";
 
 
-
+            Console.WriteLine(filePath);
             byte[] imageBytes = System.IO.File.ReadAllBytes(filePath);
             string stringBytes = Convert.ToBase64String(imageBytes);
             ViewBag.FilePath = stringBytes;
