@@ -31,12 +31,12 @@
             </div>
             <div class="form-group">
                 <label>Categories:</label><br>
-                <input type="checkbox" name="categories[]" value="family"> Family<br>
-                <input type="checkbox" name="categories[]" value="friends"> Friends<br>
-                <input type="checkbox" name="categories[]" value="nature"> Nature<br>
-                <input type="checkbox" name="categories[]" value="food"> Food<br>
-                <input type="checkbox" name="categories[]" value="sports"> Sports<br>
-                <input type="checkbox" name="categories[]" value="other"> Other<br>
+                <input asp-for="Category" type="checkbox" name="categories" value=0> Family<br>
+                <input asp-for="Category" type="checkbox" name="categories" value=1> Friends<br>
+                <input asp-for="Category" type="checkbox" name="categories" value=2> Nature<br>
+                <input asp-for="Category" type="checkbox" name="categories" value=3> Food<br>
+                <input asp-for="Category" type="checkbox" name="categories" value=4> Sports<br>
+                <input asp-for="Category" type="checkbox" name="categories" value=5> Other<br>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

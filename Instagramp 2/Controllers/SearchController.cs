@@ -2,13 +2,17 @@
 using Instagramp_2.Models;
 using Instagramp_2.Service;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 
 namespace Instagramp_2.Controllers
 {
     public class SearchController : Controller
     {
+        PostDAO postDAO = new PostDAO();
+        List<PostModel> posts = new List<PostModel>();
         public IActionResult Index()
         {
+
             List<SearchTermModel> searchTerms = new List<SearchTermModel>();
 
             searchTerms.Add(new SearchTermModel("Family", "See posts about family!", "img/familypic.jpg", "Family", "Search"));
@@ -23,48 +27,36 @@ namespace Instagramp_2.Controllers
 
         public IActionResult Family()
         {
-            var postDAO = new PostDAO();
-
-            var posts = postDAO.GetAll().Where(p => p.Category.Contains("family")).ToList();
+            posts = postDAO.GetAll().Where(p => p.Category == "0").ToList();
             return View(posts);
         }
         public IActionResult Friends()
         {
-            var postDAO = new PostDAO();
-
-            var posts = postDAO.GetAll().Where(p => p.Category.Contains("friends")).ToList();
+            posts = postDAO.GetAll().Where(p => p.Category == "1").ToList();
             return View(posts);
         }
 
         public IActionResult Nature()
         {
-            var postDAO = new PostDAO();
-
-            var posts = postDAO.GetAll().Where(p => p.Category.Contains("nature")).ToList();
+            posts = postDAO.GetAll().Where(p => p.Category == "2").ToList();
             return View(posts);
         }
 
         public IActionResult Sports()
         {
-            var postDAO = new PostDAO();
-
-            var posts = postDAO.GetAll().Where(p => p.Category.Contains("sports")).ToList();
+            posts = postDAO.GetAll().Where(p => p.Category == "3").ToList();
             return View(posts);
         }
 
         public IActionResult Food()
         {
-            var postDAO = new PostDAO();
-
-            var posts = postDAO.GetAll().Where(p => p.Category.Contains("food")).ToList();
+            posts = postDAO.GetAll().Where(p => p.Category == "4").ToList();
             return View(posts);
         }
 
         public IActionResult Other()
         {
-            var postDAO = new PostDAO();
-
-            var posts = postDAO.GetAll().Where(p => p.Category.Contains("other")).ToList();
+            posts = postDAO.GetAll().Where(p => p.Category == "5").ToList();
             return View(posts);
         }
     }

@@ -87,53 +87,88 @@ nav {
     transition: 1s ease;
 }
 
-.searchcard {
-    display: block;
-    margin: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-    flex: 50%;
-    text-align: center;
-    width: 33.33%;
-    padding: 5px;
-}
-
-    .searchcard:hover {
-        -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2);
-        transition: 2s ease;
-        outline-color: rgba(255, 255, 255, 0);
-        outline-offset: 15px;
-        text-shadow: 1px 1px 2px #427388;
-    }
-
 .searchrow {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center; 
 }
 
-    .searchrow::after {
-        content: "";
-        clear: both;
-        display: table;
+.searchcard {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: -152px;
+}
+
+.btn-browse {
+    background-color: #3473FE;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-browse:hover {
+    background-color: white;
+    text-shadow: 1px 1px 2px #427388;
+}
+
+
+@media (min-width: 768px) {
+    .searchrow {
+        justify-content: space-between; 
     }
+
+    .searchcard {
+        width: calc(50% - 10px); 
+        margin-right: 10px; 
+        margin-bottom: 0; 
+    }
+}
+
+
+.searchcard:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 2s ease;
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388;
+}
+
+.searchrow::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 .searchcard-title {
-    text-align: center;
-    color: royalblue;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    color: #3473FE;
 }
 
 .searchcard-text {
-    text-align: center;
-    color: royalblue;
+    font-size: 16px;
+    color: #6c757d; 
 }
+
 
 .searchcard-body {
     margin: 10px;
-    margin-left: 20px;
+    margin-left: 15px;
     margin-right: 0px;
+    transition: 2s ease;
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+}
+
+.searchcard:nth-child(2n+1) {
+    margin-bottom: 20px; 
 }
 
 .searchTerm {
@@ -142,4 +177,12 @@ nav {
     font-size: 44px;
     font-family: 'Segoe UI';
     text-align: center;
+    transition: color 0.3s ease-in-out;
 }
+
+    .searchTerm:hover {
+        transform: scale(1.55);
+        transition: 3s ease;
+        text-decoration-color: inherit;
+        color: #008EF4;
+    }

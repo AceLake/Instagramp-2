@@ -6,21 +6,24 @@
 
 <div class="searchTerm">
     <h1>Search Terms</h1>
+    <br>
+
 </div>
 
-@foreach (var item in Model.Select((value, i) => new { i, value }))
-{
-    <br>
-    <br>
-    <br>
-    <div class="searchcard">
-        <div class="searchimg-container">
-            <img src="@item.value.imgURL" class="card-img-top" alt="Image Name">
-        </div>
-        <div class="searchcard-body">
-            <h2 class="searchcard-title">@item.value.name</h2>
-            <p class="searchcard-text">@item.value.description</p>
-            <a href="@Url.Action(item.value.actionName, item.value.controllerName)" class="btn btn-primary">Browse</a>
-        </div>
+<div class="container">
+    <div class="row searchrow">
+        @foreach (var item in Model.Select((value, i) => new { i, value }))
+        {
+            <div class="searchcard">
+                <div class="searchimg-container">
+                    <img src="@item.value.imgURL" class="card-img-top" alt="Image Name">
+                </div>
+                <div class="searchcard-body">
+                    <h2 class="searchcard-title">@item.value.name</h2>
+                    <p class="searchcard-text">@item.value.description</p>
+                    <a href="@Url.Action(item.value.actionName, item.value.controllerName)" class="btn-browse">Browse</a>
+                </div>
+            </div>
+        }
     </div>
-}
+</div>

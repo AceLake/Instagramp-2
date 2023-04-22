@@ -25,17 +25,10 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Views\Search\SearchTopics\" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<Content Remove="wwwroot\uploads\" />
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="wwwroot\uploads\" />
 	</ItemGroup>
-	<ItemGroup>
-    <Folder Include="Views\Search\SearchTopics\" />
-    </ItemGroup>
 
 </Project>
