@@ -49,9 +49,19 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    height: 650px;
+    height: 700px;
     overflow: hidden;
 }
+
+.card-title {
+    font-size: 30px;
+    color: black;
+}
+
+.card-text {
+    padding-top: 10px;
+}
+
 .img-container {
     width: 100%;
     height: 70%;
@@ -72,6 +82,11 @@ nav {
 }
 .nav-link {
     color: #3473FE;
+}
+
+.card-body {
+    padding-bottom: 50px;
+    margin-top: 10px;
 }
 
 .searchcard img {
@@ -97,13 +112,13 @@ nav {
 .searchcard {
     width: 100%;
     margin-bottom: 20px;
-    margin-left: -152px;
+    margin-left: 50px;
 }
 
 .btn-browse {
     background-color: #3473FE;
     color: #fff;
-    border: none;
+    border: white;
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
@@ -112,8 +127,10 @@ nav {
 
 .btn-browse:hover {
     background-color: white;
+    color: #3473FE;
     text-shadow: 1px 1px 2px #427388;
     border: solid;
+    border-color: #3473FE;
     transition: 2s;
 }
 
@@ -162,7 +179,7 @@ nav {
 
 .searchcard-body {
     margin: 10px;
-    margin-left: 15px;
+    margin-left: 10px;
     margin-right: 0px;
     transition: 2s ease;
     outline-color: rgba(255, 255, 255, 0);
@@ -182,9 +199,19 @@ nav {
     transition: color 0.3s ease-in-out;
 }
 
-    .searchTerm:hover {
-        transform: scale(1.55);
-        transition: 3s ease;
-        text-decoration-color: inherit;
-        color: #008EF4;
-    }
+.searchTerm:hover {
+    text-decoration-color: inherit;
+    color: #008EF4;
+}
+
+.filteredcard-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.filteredimg-container {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+}
