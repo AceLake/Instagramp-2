@@ -1,7 +1,12 @@
+using Instagramp_2.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Register PostDAO as a scoped service
+builder.Services.AddScoped<IPostDAO, PostDAO>();
 
 var app = builder.Build();
 

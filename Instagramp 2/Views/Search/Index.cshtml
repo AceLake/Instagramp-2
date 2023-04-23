@@ -14,6 +14,7 @@
     <div class="row searchrow">
         @foreach (var item in Model.Select((value, i) => new { i, value }))
         {
+            <form asp-action="@item.value.name">
             <div class="searchcard">
                 <div class="searchimg-container">
                     <img src="@item.value.imgURL" class="card-img-top" alt="Image Name">
@@ -21,9 +22,14 @@
                 <div class="searchcard-body">
                     <h2 class="searchcard-title">@item.value.name</h2>
                     <p class="searchcard-text">@item.value.description</p>
-                    <a href="@Url.Action(item.value.actionName, item.value.controllerName)" class="btn-browse">Browse</a>
+                    
+                        <input name="categories" value="@item.value.name" type="hidden">
+
+                        <input type="submit" value="Browse" class="btn-browse">
                 </div>
             </div>
+        </form>
+
         }
     </div>
 </div>

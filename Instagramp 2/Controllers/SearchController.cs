@@ -8,56 +8,108 @@ namespace Instagramp_2.Controllers
 {
     public class SearchController : Controller
     {
-        PostDAO postDAO = new PostDAO();
-        List<PostModel> posts = new List<PostModel>();
+        private readonly IPostDAO _postDAO;
+        public SearchController(IPostDAO postDAO)
+        {
+            _postDAO = postDAO;
+        }
         public IActionResult Index()
         {
-
             List<SearchTermModel> searchTerms = new List<SearchTermModel>();
 
-            searchTerms.Add(new SearchTermModel("Family", "See posts about family!", "img/familypic.jpg", "Family", "Search"));
-            searchTerms.Add(new SearchTermModel("Friends", "See posts about friends!", "img/dawgsoutpic.jpg", "Friends", "Search"));
-            searchTerms.Add(new SearchTermModel("Nature", "See posts about nature!", "img/naturepic.jpg", "Nature", "Search"));
-            searchTerms.Add(new SearchTermModel("Sports", "See posts about sports!", "img/sportspic.jpg", "Sports", "Search"));
-            searchTerms.Add(new SearchTermModel("Food", "See posts about food!", "img/foodpic.jpg", "Food", "Search"));
-            searchTerms.Add(new SearchTermModel("Other", "See posts about all other topics!", "img/otherpic.jpg", "Other", "Search"));
+            searchTerms.Add(new SearchTermModel("Family", "See posts about family!", "img/familypic.jpg"));
+            searchTerms.Add(new SearchTermModel("Friends", "See posts about friends!", "img/dawgsoutpic.jpg"));
+            searchTerms.Add(new SearchTermModel("Nature", "See posts about nature!", "img/naturepic.jpg"));
+            searchTerms.Add(new SearchTermModel("Sports", "See posts about sports!", "img/sportspic.jpg"));
+            searchTerms.Add(new SearchTermModel("Food", "See posts about food!", "img/foodpic.jpg"));
+            searchTerms.Add(new SearchTermModel("Other", "See posts about all other topics!", "img/otherpic.jpg"));
 
             return View(searchTerms);
         }
 
-        public IActionResult Family()
+        public IActionResult Filter(string categories)
         {
-            posts = postDAO.GetAll().Where(p => p.Category == "0").ToList();
-            return View(posts);
-        }
-        public IActionResult Friends()
-        {
-            posts = postDAO.GetAll().Where(p => p.Category == "1").ToList();
-            return View(posts);
+            // Redirect to the appropriate category action method based on selected categories
+            if (categories.Contains("Family"))
+            {
+                return RedirectToAction("Family", new { categories = categories });
+            }
+            else if (categories.Contains("Friends"))
+            {
+                return RedirectToAction("Friends", new { categories = categories });
+            }
+            else if (categories.Contains("Nature"))
+            {
+                return RedirectToAction("Nature", new { categories = categories });
+            }
+            else if (categories.Contains("Sports"))
+            {
+                return RedirectToAction("Sports", new { categories = categories });
+            }
+            else if (categories.Contains("Food"))
+            {
+                return RedirectToAction("Food", new { categories = categories });
+            }
+            else if (categories.Contains("Other"))
+            {
+                return RedirectToAction("Other", new { categories = categories });
+            }
+
+            // If no categories are selected, you can handle it as desired (e.g., return an error view)
+            return RedirectToAction("NoSearchTerms");
         }
 
-        public IActionResult Nature()
+        public IActionResult Family(string categories)
         {
-            posts = postDAO.GetAll().Where(p => p.Category == "2").ToList();
-            return View(posts);
-        }
+            List<PostModel> filteredPosts = _postDAO.GetAll()
+                .Where(p => categories.Contains(p.Category.ToString()))
+                .ToList();
 
-        public IActionResult Sports()
-        {
-            posts = postDAO.GetAll().Where(p => p.Category == "3").ToList();
-            return View(posts);
+            return View(filteredPosts);
         }
-
-        public IActionResult Food()
+        public IActionResult Friends(string categories)
         {
-            posts = postDAO.GetAll().Where(p => p.Category == "4").ToList();
-            return View(posts);
+            List<PostModel> filteredPosts = _postDAO.GetAll()
+                .Where(p => categories.Contains(p.Category.ToString()))
+                .ToList();
+
+            return View(filteredPosts);
         }
-
-        public IActionResult Other()
+        public IActionResult Nature(string categories)
         {
-            posts = postDAO.GetAll().Where(p => p.Category == "5").ToList();
-            return View(posts);
+            List<PostModel> filteredPosts = _postDAO.GetAll()
+                .Where(p => categories.Contains(p.Category.ToString()))
+                .ToList();
+
+            return View(filteredPosts);
+        }
+        public IActionResult Sports(string categories)
+        {
+            List<PostModel> filteredPosts = _postDAO.GetAll()
+                .Where(p => categories.Contains(p.Category.ToString()))
+                .ToList();
+
+            return View(filteredPosts);
+        }
+        public IActionResult Food(string categories)
+        {
+            List<PostModel> filteredPosts = _postDAO.GetAll()
+                .Where(p => categories.Contains(p.Category.ToString()))
+                .ToList();
+
+            return View(filteredPosts);
+        }
+        public IActionResult Other(string categories)
+        {
+            List<PostModel> filteredPosts = _postDAO.GetAll()
+                .Where(p => categories.Contains(p.Category.ToString()))
+                .ToList();
+
+            return View(filteredPosts);
         }
     }
 }
+
+
+  
+

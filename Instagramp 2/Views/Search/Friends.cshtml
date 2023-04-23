@@ -1,35 +1,23 @@
-﻿@model IEnumerable<Instagramp_2.Models.SearchTermModel>
+﻿@model IEnumerable<ClassLibrary.PostModel>
 
 @{
-    ViewData["Title"] = "Friends";
+    ViewData["Title"] = "Index";
 }
 
-<h1>Posts about Friends</h1>
+<div class="searchTerm">
+    <h1>Posts about Friends</h1>
+    <br>
+</div>
 
-@if (Model != null)
+@foreach (var item in @Model)
 {
-    @foreach (var item in Model)
-{
-        <br>
-        <br>
-        <br>
-        <div class="searchcard">
-            <div class="searchimg-container">
-            <img src="@item.imgURL" class="card-img-top" alt="Image Name">
+    <div class="card">
+        <div class="img-container">
+            <img src="@item.ImgURL" class="filteredcard-img-top" alt="...">
         </div>
-            <div class="searchcard-body">
-            <h5 class="card-title">@item.name</h5>
-            <p class="card-text">@item.description</p>
-
-            </div>
+        <div class="card-body">
+            <h5 class="card-title">@item.Title</h5>
+            <p class="card-text">@item.Description</p>
         </div>
-
-}
-}
-
-else
-{
-    <div class="searchTerm">
-        <h1>No search terms found</h1>
     </div>
 }
